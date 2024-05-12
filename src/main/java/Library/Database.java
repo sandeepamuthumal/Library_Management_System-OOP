@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Database {
     
-    ArrayList<User> users = new ArrayList<User>();
+    static ArrayList<User> users = new ArrayList<User>();
     ArrayList<String> userNames = new ArrayList<String>();
     static ArrayList<Book> books = new ArrayList<Book>();
     ArrayList<String> bookNames = new ArrayList<String>();
@@ -62,6 +62,16 @@ public class Database {
         System.out.println("Book Deleted Successfully");
     }
     
+    public void getBookByName(String name)
+    {
+        System.out.println("");
+        for(Book bk : books){
+            if(bk.getName().equals(name) || bk.getName().contains(name))
+            {
+                System.out.println(bk.toString());
+            }
+        }
+    }
     public static void showBooks()
     {
         System.out.println("");
@@ -73,4 +83,35 @@ public class Database {
         }
     }
     
+    public static void showMembers()
+    {
+        System.out.println("");
+        System.out.println("All Members : ");
+        int i = 0;
+        for (User us : users) {
+            System.out.print(++i + ". ");
+            
+            if(us.getClass().getSimpleName().equals("Member"))
+            {
+                System.out.println(us.toString());
+            }
+        }
+    }
+    
+    public static void showUsers()
+    {
+        System.out.println("");
+        System.out.println("All Users : ");
+        int i = 0;
+        for (User us : users) {
+            System.out.print(++i + ". ");
+            System.out.println(us.toString());
+        }
+    }
+    
+    public void deleteUser(int i)
+    {
+        users.remove(i);
+        System.out.println("User Deleted Successfully");
+    }
 }

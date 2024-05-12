@@ -43,6 +43,19 @@ public abstract class User {
         return password;
     }
     
+    public void update(String name, String email, String phoneNumber)
+    {
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+    
+    @Override
+    public String toString()
+    {
+        return "Name : " + name + ", Email : " + email + ", Contact No : " + phoneNumber;
+    }
+    
     public abstract void dashboard();
     public abstract void sideMenu();
 }

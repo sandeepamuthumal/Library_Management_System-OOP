@@ -22,6 +22,11 @@ public class Main {
         System.out.println("Welcome to Library Management System!");
         database = new Database();
         s = new Scanner(System.in);
+        
+        System.out.println("");
+        System.out.println("All Users : ");
+        int i = 0;
+        
 
         //add two books initially
         Book book1 = new Book("13: 978-0988262591", "The Phoenix Project", "Gene Kim", 8000.00);
